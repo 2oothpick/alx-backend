@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
-0-simple_helper_function.py
+0-simple_helper_function
 """
 
-def index_range(page: int, page_size: int) -> tuple[int, int]:
+from typing import Tuple
+
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
     Returns a tuple with start and end indexes
     """
-    return ((page -1) * page_size , (page * page_size))
+    return ((page - 1) * page_size, (page * page_size))
