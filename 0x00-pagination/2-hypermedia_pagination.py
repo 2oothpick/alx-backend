@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-1. Simple pagination
+2. Hypermedia pagination
 """
 
 import csv
@@ -52,7 +52,7 @@ class Server:
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str: Any]:
         """
-        Retunrs a dictionary with pagination information
+        Returns a dictionary with pagination information
         """
         data = self.get_page(page, page_size)
         total_pages = math.ceil(len(self.dataset()) / page_size)
