@@ -35,6 +35,9 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        corrects pagination
+        """
         assert (isinstance(page, int) and isinstance(
             page_size, int) and page > 0 and page_size > 0)
         # unpack index_range tuple
