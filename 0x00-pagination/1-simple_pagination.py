@@ -35,17 +35,14 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        try:
-            assert (isinstance(page, int) and isinstance(
-                page_size, int) and page > 0 and page_size > 0)
-            # unpack index_range tuple
-            start, end = index_range(page, page_size)
-            csv_length = len(self.dataset())
-            # end index should be the min of end and size of dataset
-            end = min(end, csv_length)
-            # return empty list if input argument is out of range
-            if start >= csv_length:
-                return []
-            return self.dataset()[start: end]
-        except AssertionError:
-            raise AssertionError
+        assert (isinstance(page, int) and isinstance(
+            page_size, int) and page > 0 and page_size > 0)
+        # unpack index_range tuple
+        start, end = index_range(page, page_size)
+        csv_length = len(self.dataset())
+        # end index should be the min of end and size of dataset
+        end = min(end, csv_length)
+        # return empty list if input argument is out of range
+        if start >= csv_length:
+            return []
+        return self.dataset()[start: end]
