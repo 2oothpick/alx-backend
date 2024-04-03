@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-FIFO caching
+module contains FIFO caching system
 """
 
 # import BaseCaching from base_caching.py
@@ -14,7 +14,8 @@ class FIFOCache(BaseCaching):
     """
 
     def __init__(self):
-        """ Init
+        """
+        Initializes the class
         """
         super().__init__()
 
