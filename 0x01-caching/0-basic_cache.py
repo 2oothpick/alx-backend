@@ -17,13 +17,13 @@ class BasicCache(BaseCaching):
         """
         Populates the self.cache_data dictionary
         """
-        if key != None or item != None:
+        if key is not None or item is not None:
             self.cache_data.update({key: item})
 
     def get(self, key):
         """
         Returns dictionary values for the provided key
         """
-        if key in self.cache_data.keys() and key != None:
+        if key in self.cache_data.keys() and key is not None:
             return self.cache_data.get(key)
         return None
