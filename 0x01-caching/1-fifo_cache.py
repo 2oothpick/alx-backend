@@ -13,6 +13,11 @@ class FIFOCache(BaseCaching):
     its put and get methods
     """
 
+    def __init__(self):
+        """ Init
+        """
+        super().__init__()
+
     def put(self, key, item):
         """
         Populates the self.cache_data dictionary
