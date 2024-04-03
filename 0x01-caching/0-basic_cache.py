@@ -16,7 +16,7 @@ class BasicCache(BaseCaching):
     def put(self, key, item):
         """
         Populates the self.cache_data dictionary
-        if key and item anre not None otherwise
+        if key and item are not None, otherwise
         it does nothing.
         """
         if key is not None and item is not None:
@@ -25,8 +25,8 @@ class BasicCache(BaseCaching):
     def get(self, key):
         """
         Returns dictionary values for the provided key
-        if key is exists in self.cache_data and the key is
-        not None otherwise its returns None
+        if key exists in self.cache_data and key is
+        not None, otherwise return None
         """
         if key in self.cache_data.keys() and key is not None:
             return self.cache_data.get(key)
