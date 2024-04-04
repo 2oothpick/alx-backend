@@ -44,6 +44,8 @@ class LIFOCache(BaseCaching):
             self.cache_data.update({key: item})
             # move most recently added item to the end
             self.cache_data.move_to_end(key, last=True)
+        else:
+            return
 
     def get(self, key):
         """

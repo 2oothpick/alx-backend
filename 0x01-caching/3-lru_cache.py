@@ -40,6 +40,8 @@ class LRUCache(BaseCaching):
             self.cache_data.update({key: item})
             # move most recently used items to front
             self.cache_data.move_to_end(key, last=False)
+        else:
+            return
 
     def get(self, key):
         """
