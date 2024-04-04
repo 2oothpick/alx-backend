@@ -29,6 +29,8 @@ class LRUCache(BaseCaching):
         Deletes the least used item in the dictionary if
         the number of items exceed BaseCaching.MAX_ITEMS
         """
+        if key is None or item is None:
+            return
         if key is not None or item is not None:
             if key not in self.cache_data:
                 # if item is a new item, check if dictionary is full
@@ -40,8 +42,6 @@ class LRUCache(BaseCaching):
             self.cache_data.update({key: item})
             # move most recently used items to front
             self.cache_data.move_to_end(key, last=False)
-        else:
-            return
 
     def get(self, key):
         """

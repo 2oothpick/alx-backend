@@ -33,6 +33,8 @@ class LIFOCache(BaseCaching):
         Deletes the last added item in the dictionary if
         the number of items exceeds BaseCaching.MAX_ITEMS
         """
+        if key is None or item is None:
+            return
         if key is not None or item is not None:
             if key not in self.cache_data:
                 # if item is a new item, check if dictionary is full
@@ -44,8 +46,6 @@ class LIFOCache(BaseCaching):
             self.cache_data.update({key: item})
             # move most recently added item to the end
             self.cache_data.move_to_end(key, last=True)
-        else:
-            return
 
     def get(self, key):
         """

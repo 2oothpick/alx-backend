@@ -27,6 +27,8 @@ class FIFOCache(BaseCaching):
         Deletes the first item in the dictionary if
         the number of items exceed BaseCaching.MAX_ITEMS
         """
+        if key is None or item is None:
+            return
         if key is not None or item is not None:
             self.cache_data.update({key: item})
         if len(self.cache_data) > self.MAX_ITEMS:

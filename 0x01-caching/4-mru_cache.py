@@ -29,6 +29,8 @@ class MRUCache(BaseCaching):
         Deletes the most used item in the dictionary if
         the number of items exceed BaseCaching.MAX_ITEMS
         """
+        if key is None or item is None:
+            return
         if key is not None or item is not None:
             if key not in self.cache_data:
                 # if item is a new item, check if dictionary is full
