@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 """
-2-lifo_cache.py
+module contains LIFO caching system
 """
-
+from collections import OrderedDict
 
 # import BaseCaching from base_caching.py
-from collections import OrderedDict
+
 BaseCaching = __import__('base_caching').BaseCaching
 
 
@@ -18,7 +18,8 @@ class LIFOCache(BaseCaching):
     """
 
     def __init__(self):
-        """ Init
+        """
+        Initializes the class
         """
         super().__init__()
         self.cache_data = OrderedDict()
@@ -42,7 +43,7 @@ class LIFOCache(BaseCaching):
                     print(f"DISCARD: {last_item}")
             self.cache_data.update({key: item})
             # move most recently added item to the end
-            self.cache_data.move_to_end(key)
+            self.cache_data.move_to_end(key, last=True)
 
     def get(self, key):
         """
