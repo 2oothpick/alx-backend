@@ -13,7 +13,12 @@ BaseCaching = __import__('base_caching').BaseCaching
 class MRUCache(BaseCaching):
     """
     Class inherits BaseCaching and overrides
-    its put and get methods
+    its put and get methods.
+
+    To implement MRU, most recently accessed items
+    are moved to the front of the dictionary
+    MRU items pile up at the front of the dictionary and
+    are removed when cache is full
     """
 
     def __init__(self):
@@ -47,7 +52,8 @@ class MRUCache(BaseCaching):
         """
         Returns dictionary values for the provided key
         if key exists in self.cache_data and key is
-        not None, otherwise return None
+        not None, otherwise return None.
+        Moves accessed key, value pair to the front of the dictionary
         """
         if key is not None and key in self.cache_data:
             self.cache_data.move_to_end(key, last=False)
