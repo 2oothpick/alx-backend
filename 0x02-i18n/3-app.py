@@ -36,7 +36,7 @@ def index() -> str:
     Returns the homepage
     """
     return render_template(
-        "1-index.html",
+        "3-index.html",
     )
 
 
