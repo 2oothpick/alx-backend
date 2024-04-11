@@ -7,6 +7,8 @@ from flask_babel import Babel
 from typing import Union, Dict
 
 # babel configuration
+
+
 class Config:
     """Represents a Flask Babel configuration."""
 
