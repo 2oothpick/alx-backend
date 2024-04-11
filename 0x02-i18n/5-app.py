@@ -49,7 +49,7 @@ def before_request() -> None:
     g.user = get_user()
 
 
-@babel.localeselctor
+@babel.localeselector
 def get_locale() -> str:
     """
     Determines the best language

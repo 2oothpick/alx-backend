@@ -55,7 +55,7 @@ def before_request() -> None:
 # locale_selector parameter
 
 
-@babel.localeselctor
+@babel.localeselector
 def get_locale() -> str:
     """
     Determines the best language
